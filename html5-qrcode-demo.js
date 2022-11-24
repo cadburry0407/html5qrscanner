@@ -11,7 +11,11 @@ function onScanFailure(error) {
 
 let html5QrcodeScanner = new Html5QrcodeScanner(
     'reader',
-    { fps: 10, qrbox: { width: 300, height: 300 } },
+    {
+        fps: 10,
+        qrbox: { width: 300, height: 300 },
+        useBarCodeDetectorIfSupported: true,
+    },
     /* verbose= */ false
 );
 html5QrcodeScanner.render(onScanSuccess, onScanFailure);
